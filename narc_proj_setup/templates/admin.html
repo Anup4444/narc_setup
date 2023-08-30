@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Select with Jinja</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    
+    
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+        <label for="fruit">HOST: </label>
+        <select id="fruitSelect" name="fruit">
+            <option value="default">Please select</option>
+            {% for option in host_list %}
+            <option value="{{ option['id'] }}">{{ option['value'] }}</option>
+            {% endfor %}
+        </select>
+        <input hidden="hidden", value="{{csrf_token()}}" id="tk">
+        <input type="text" id="customFruit"><button id="edit">Edit</button><button id="del">Del</button><br><br>
+        <label>Add Host: </label><input type="text" id="addhost"><button id="add">add</button><br><br>
+
+<hr>
+       <label for="DiagnosticTest">Diagnostic Test: </label>
+        <select id="DiagnosticTest" name="suspectProblems">
+            <option value="DiagnosticTestdefault">Please select</option>
+            {% for option in DiagnosticTest_list %}
+            <option value="{{ option['id'] }}">{{ option['value'] }}</option>
+            {% endfor %}
+        </select>
+        
+        <input hidden="hidden", value="{{csrf_token()}}" id="tk">
+        <input type="text" id="DiagnosticTesttext"><button id="DiagnosticTestedit">Edit</button><button id="DiagnosticTestdel">Del</button><br><br>
+        <label>Add DiagnosticTest: </label><input type="text" id="DiagnosticTesttextadd"><button id="DiagnosticTestadd">add</button><br><br>
+<hr>
+
+        <label for="suspectProblem">Suspected Problem: </label>
+        <select id="suspectProblem" name="suspectProblems">
+            <option value="suspectProblemdefault">Please select</option>
+            {% for option in suspectProblem_list %}
+            <option value="{{ option['id'] }}">{{ option['value'] }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" id="suspectProblemtext"><button id="suspectProblemedit">Edit</button><button id="suspectProblemdel">Del</button><br><br>
+        <label>Add SuspectedProblem: </label><input type="text" id="suspectProblemtextadd"><button id="suspectProblemadd">add</button><br><br>
+<hr>
+        <label for="SampleMaterialsSubmitted">Sample Materials Submitted: </label>
+        <select id="SampleMaterialsSubmitted" name="suspectProblems">
+            <option value="SampleMaterialsSubmitteddefault">Please select</option>
+            {% for option in SampleMaterialsSubmittedData_list %}
+            <option value="{{ option['id'] }}">{{ option['value'] }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" id="SampleMaterialsSubmittedtext"><button id="SampleMaterialsSubmittededit">Edit</button><button id="SampleMaterialsSubmitteddel">Del</button><br><br>
+        <label>Add SampleMaterialSubmitted: </label><input type="text" id="SampleMaterialsSubmittedtextadd"><button id="SampleMaterialsSubmittedadd">add</button><br><br>
+
+
+    
+</body>
+</html>
+
+<script src="../static/script/host.js"></script>
+<script src="../static/script/diagnosticTest.js"></script>
+<script src="../static/script/suspectProblem.js"></script>
+<script src="../static/script/SampleMaterialsSubmitted.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
